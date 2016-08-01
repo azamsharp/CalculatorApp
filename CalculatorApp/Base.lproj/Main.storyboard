@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Calculator View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CalculatorViewController" id="BYZ-38-t0r" customClass="CalculatorViewController" customModule="CalculatorApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UJd-Lr-H0v">
+                                <rect key="frame" x="252" y="28" width="97" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="firstNumberTextField"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="TNf-f8-xz3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58c-1r-qom">
+                                <rect key="frame" x="252" y="66" width="97" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="secondNumberTextField"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30o-Eh-xJo">
+                                <rect key="frame" x="277" y="104" width="46" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="showResultButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="5Ac-Di-Z3i"/>
+                                </constraints>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="yNE-OL-Ppf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enN-dI-PXJ">
+                                <rect key="frame" x="279" y="142" width="42" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="resultLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UJd-Lr-H0v" firstAttribute="trailing" secondItem="58c-1r-qom" secondAttribute="trailing" id="Aud-wx-UNj"/>
+                            <constraint firstItem="30o-Eh-xJo" firstAttribute="centerX" secondItem="enN-dI-PXJ" secondAttribute="centerX" id="BV4-lY-tYQ"/>
+                            <constraint firstItem="30o-Eh-xJo" firstAttribute="top" secondItem="58c-1r-qom" secondAttribute="bottom" constant="8" symbolic="YES" id="D4B-GA-a9Y"/>
+                            <constraint firstItem="enN-dI-PXJ" firstAttribute="top" secondItem="30o-Eh-xJo" secondAttribute="bottom" constant="8" symbolic="YES" id="Ebh-Un-K59"/>
+                            <constraint firstItem="UJd-Lr-H0v" firstAttribute="leading" secondItem="58c-1r-qom" secondAttribute="leading" id="San-BH-svJ"/>
+                            <constraint firstItem="30o-Eh-xJo" firstAttribute="centerX" secondItem="58c-1r-qom" secondAttribute="centerX" id="U97-fc-879"/>
+                            <constraint firstItem="UJd-Lr-H0v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hlA-T6-BwZ"/>
+                            <constraint firstItem="58c-1r-qom" firstAttribute="top" secondItem="UJd-Lr-H0v" secondAttribute="bottom" constant="8" symbolic="YES" id="mSN-AB-wRp"/>
+                            <constraint firstItem="UJd-Lr-H0v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="xfE-CX-eYe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstNumberTextField" destination="UJd-Lr-H0v" id="8Se-qj-efA"/>
+                        <outlet property="resultLabel" destination="enN-dI-PXJ" id="lRm-Zd-jg8"/>
+                        <outlet property="secondNumberTextField" destination="58c-1r-qom" id="05f-3f-hx4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
